@@ -26,8 +26,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
 }
-
+.header__figure {
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+.header__img {
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
 .episodes {
   height: calc(100% - 15rem);
   width: 100%;
