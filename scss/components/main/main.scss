@@ -1,0 +1,56 @@
+@use "../../abstracts/vars";
+
+.main{
+    height: calc(100% - 15rem);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+
+.section{
+
+    &__left{
+        background-color: green;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__right{
+        background-color: purple;
+        width: 50%;
+        height: 100%;
+    }
+}
+
+.episodes{
+    display: grid;
+    grid-template-columns: 23rem 23rem;
+    grid-template-rows: 23rem 23rem;
+    list-style: none;
+    gap: 5rem;
+
+    &__episode{
+        aspect-ratio: 1/1;
+        background-color: red;
+        position: relative;
+        background-image: url(../../../images/logo.png);
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__date{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__title{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
