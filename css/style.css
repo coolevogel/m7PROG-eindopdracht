@@ -13,10 +13,37 @@ body {
 }
 
 body {
-  background: red;
-  min-height: 100vh;
-  padding-bottom: 0rem;
+  height: 100vh;
+  width: 100vw;
+  padding: 3rem;
   font-family: "Open Sans", sans-serif;
+}
+
+.header {
+  height: 15rem;
+  width: 100%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.episodes {
+  height: calc(100% - 15rem);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.episodes__left {
+  background-color: green;
+  width: 50%;
+  height: 100%;
+}
+.episodes__right {
+  background-color: purple;
+  width: 50%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

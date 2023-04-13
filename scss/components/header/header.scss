@@ -1,0 +1,10 @@
+@use "../../abstracts/vars";
+
+.header{
+    height: 15rem;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
