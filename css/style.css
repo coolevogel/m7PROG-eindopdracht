@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-  height: 15rem;
+  height: 10rem;
   width: 100%;
   background-color: red;
   display: flex;
@@ -44,6 +44,18 @@ body {
   background-color: purple;
   width: 50%;
   height: 100%;
+}
+
+.footer {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__p {
+  font-size: 100%;
+  color: rgb(79, 79, 79);
 }
 
 /*# sourceMappingURL=style.css.map */
