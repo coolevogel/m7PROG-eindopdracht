@@ -2,7 +2,8 @@
 @use "./base.scss";
 
 //components
-
+@use "./components/header/header.scss";
+@use "./components/episodes/episodes.scss";
 
 //media querys
 @use "./abstracts/mediaquerys";

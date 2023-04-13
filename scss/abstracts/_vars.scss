@@ -1,1 +1,8 @@
 $font-family: "Open Sans", sans-serif;
+
+$vhCalc: (
+    "heightOfHeader": 15rem,
+    "paddingOfBody": 4rem,
+);
+
+// height: map-get(vars.$vhCalc, "heightOfHeader");
