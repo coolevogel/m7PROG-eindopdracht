@@ -1,0 +1,22 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+}
+
+body {
+  background: red;
+  min-height: 100vh;
+  padding-bottom: 0rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */

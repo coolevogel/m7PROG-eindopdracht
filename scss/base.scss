@@ -1,0 +1,8 @@
+@use "./abstracts/vars";
+
+body{
+    background: red;
+    min-height: 100vh;
+    padding-bottom: 0rem;
+    font-family: vars.$font-family;
+}
