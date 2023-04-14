@@ -4,7 +4,9 @@
 //components
 @use "./components/header/header.scss";
 @use "./components/main/main.scss";
+@use "./components/leftSection/leftSection.scss";
+@use "./components/rightSection/rightSection.scss";
 @use "./components/footer/footer.scss";
 
 //media querys
-@use "./abstracts/mediaquerys";
+@use "./abstracts/mediaquerys"

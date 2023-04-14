@@ -13,16 +13,17 @@ body {
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
   padding: 3rem;
   font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
   height: 10rem;
   width: 100%;
-  background-color: red;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,6 +40,17 @@ body {
   border-radius: 50%;
 }
 .main {
+  height: 100%;
+  width: 100%;
+  max-width: 170rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0rem 0rem 1rem 0.3rem rgb(175, 175, 175);
+}
+
+.midSection {
   height: calc(100% - 15rem);
   width: 100%;
   display: flex;
@@ -47,43 +59,97 @@ body {
 }
 
 .section__left {
-  background-color: green;
   width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.section__right {
-  background-color: purple;
-  width: 50%;
-  height: 100%;
-}
 
 .episodes {
-  display: grid;
-  grid-template-columns: 23rem 23rem;
-  grid-template-rows: 23rem 23rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   list-style: none;
+  height: 100%;
+  width: 100%;
+  gap: 5rem;
+  z-index: 1;
+}
+.episodes__grouper {
+  min-height: 10rem;
+  height: 35%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 5rem;
 }
 .episodes__episode {
+  margin: 0;
+  height: 100%;
+  min-width: 15rem;
+  flex-wrap: wrap;
   aspect-ratio: 1/1;
-  background-color: red;
   position: relative;
   background-image: url(../../../images/logo.png);
   background-position: center;
   background-size: cover;
+  box-shadow: 0rem 0rem 1rem 0.3rem rgb(210, 210, 210);
 }
 .episodes__date {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.5rem;
+  right: 0.5rem;
 }
 .episodes__title {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 0.5rem;
+  left: 0.5rem;
+}
+
+.section__right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5rem;
+}
+
+.description__header {
+  height: 35%;
+  min-height: 15rem;
+  max-height: 20rem;
+  width: 100%;
+  max-width: 60rem;
+  background-image: url("../../../images/logo.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: 0rem 0rem 1rem 0.1rem rgb(163, 163, 163);
+}
+.description__date {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.description__title {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+.description__text {
+  padding-right: 4rem;
+  margin: 2rem;
+  max-height: 15ch;
+  max-width: 70ch;
+  overflow: scroll;
+  overflow-x: hidden;
+  box-shadow: 0rem 0rem 1rem 0.3rem rgb(211, 211, 211);
+  padding: 1rem;
 }
 
 .footer {
@@ -96,6 +162,53 @@ body {
 .footer__p {
   font-size: 100%;
   color: rgb(79, 79, 79);
+}
+
+@media screen and (max-width: 1500px) {
+  .midSection {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .section__left {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+  .section__right {
+    width: 100%;
+  }
+  .episodes {
+    gap: 5rem;
+  }
+  .episodes__grouper {
+    height: 50%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .episodes {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main {
+    height: auto;
+    padding: 0;
+  }
+  .footer {
+    display: none;
+  }
+  .episodes {
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .episodes__grouper {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .episodes__episode {
+    min-height: 10rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

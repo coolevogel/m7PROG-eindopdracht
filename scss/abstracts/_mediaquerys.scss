@@ -1,0 +1,57 @@
+@media screen and (max-width: 1500px) {
+    .midSection {
+        flex-direction: column-reverse;
+        height: auto;
+    }
+
+    .section__left {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .section__right {
+        width: 100%;
+    }
+
+    .episodes {
+        gap: 5rem;
+
+        &__grouper {
+            height: 50%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .episodes{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        height: auto;
+        padding: 0;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .episodes {
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        &__grouper {
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        &__episode {
+            min-height: 10rem;
+        }
+    }
+}

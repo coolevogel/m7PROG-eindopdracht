@@ -1,0 +1,48 @@
+.section__right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.description {
+
+    &__header {
+        height: 35%;
+        min-height: 15rem;
+        max-height: 20rem;
+        width: 100%;
+        max-width: 60rem;
+        background-image: url("../../../images/logo.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        box-shadow: 0rem 0rem 1rem 0.1rem rgb(163, 163, 163);
+    }
+
+    &__date{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    &__title{
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    &__text{
+        padding-right: 4rem;
+        margin: 2rem;
+        max-height: 15ch;
+        max-width: 70ch;
+        overflow: scroll;
+        overflow-x: hidden;
+        box-shadow: 0rem 0rem 1rem 0.3rem rgb(211, 211, 211);
+        padding: 1rem;
+    }
+}
