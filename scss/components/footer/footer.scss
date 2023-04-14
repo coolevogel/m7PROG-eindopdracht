@@ -4,10 +4,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 3rem;
+    border-top: 0.2rem solid black;
 
     &__p{
         font-size: 100%;
         color: rgb(79, 79, 79);
-        
     }
 }

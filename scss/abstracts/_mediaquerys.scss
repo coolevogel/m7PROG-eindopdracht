@@ -28,6 +28,10 @@
     .episodes{
         flex-direction: column;
     }
+    .section__right{
+        justify-content: flex-start;
+        background-color: red;
+    }
 }
 
 @media screen and (max-width: 500px) {

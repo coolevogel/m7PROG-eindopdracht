@@ -1,6 +1,8 @@
 @use "./abstracts/vars";
+@use "./abstracts/colors";
 
 body{
+    background: colors.$accent;
     padding: 3rem;
     font-family: vars.$font-family;
     display: flex;

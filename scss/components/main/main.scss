@@ -8,10 +8,12 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0rem 0rem 1rem 0.3rem rgb(175, 175, 175);
 }
 
 .midSection{
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    background-color: white;
     height: calc(100% - 15rem);
     width: 100%;
     display: flex;
