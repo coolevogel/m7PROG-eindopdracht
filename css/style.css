@@ -176,6 +176,7 @@ body {
 }
 .description__link {
   color: black;
+  cursor: pointer;
 }
 
 .footer {
@@ -209,7 +210,7 @@ body {
     width: 100%;
   }
   .episodes {
-    gap: 5rem;
+    margin-bottom: 2rem;
   }
   .episodes__grouper {
     height: 50%;
@@ -232,7 +233,6 @@ body {
   .episodes {
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
     gap: 3rem;
   }
   .episodes__episode {

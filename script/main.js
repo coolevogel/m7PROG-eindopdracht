@@ -137,149 +137,48 @@ class LeftSection {
 
         this.listElement = document.createElement("ul");
         this.listElement.classList = ("episodes");
+    }
 
-        // 1
-        this.listItemElement1 = document.createElement("li");
-        this.listItemElement1.classList = ("episodes__episode");
+    makeCardsFromData(data) {
+        // Object.entries(data).forEach((entry) => {
+        for(let i = 0; i < 4; i++){
 
-        this.listItemImgElement1 = document.createElement("img");
-        this.listItemImgElement1.classList = ("episodes__img")
+        this.listItemElement = document.createElement("li");
+        this.listItemElement.classList = ("episodes__episode");
 
-        this.dateH3Element1 = document.createElement("h3");
-        this.dateH3Element1.classList = ("episodes__date");
+        this.listItemImgElement = document.createElement("img");
+        this.listItemImgElement.classList = ("episodes__img");
 
-        this.titleH3Element1 = document.createElement("h3");
-        this.titleH3Element1.classList = ("episodes__title");
+        this.dateH3Element = document.createElement("h3");
+        this.dateH3Element.classList = ("episodes__date");
 
-        // 2
-        this.listItemElement2 = document.createElement("li");
-        this.listItemElement2.classList = ("episodes__episode");
+        this.titleH3Element = document.createElement("h3");
+        this.titleH3Element.classList = ("episodes__title");
 
-        this.listItemImgElement2 = document.createElement("img");
-        this.listItemImgElement2.classList = ("episodes__img")
+        this.dateH3Element.innerHTML = "datum";
+        this.titleH3Element.innerHTML = "title";
+        this.listItemImgElement.src = "./images/logo.png";
 
-        this.dateH3Element2 = document.createElement("h3");
-        this.dateH3Element2.classList = ("episodes__date");
+        this.listElement.appendChild(this.listItemElement);
+        this.listItemElement.appendChild(this.listItemImgElement);
+        this.listItemElement.appendChild(this.dateH3Element);
+        this.listItemElement.appendChild(this.titleH3Element);
 
-        this.titleH3Element2 = document.createElement("h3");
-        this.titleH3Element2.classList = ("episodes__title");
-
-        // 3
-        this.listItemElement3 = document.createElement("li");
-        this.listItemElement3.classList = ("episodes__episode");
-
-        this.listItemImgElement3 = document.createElement("img");
-        this.listItemImgElement3.classList = ("episodes__img")
-
-        this.dateH3Element3 = document.createElement("h3");
-        this.dateH3Element3.classList = ("episodes__date");
-
-        this.titleH3Element3 = document.createElement("h3");
-        this.titleH3Element3.classList = ("episodes__title");
-
-        // 4
-        this.listItemElement4 = document.createElement("li");
-        this.listItemElement4.classList = ("episodes__episode");
-
-        this.listItemImgElement4 = document.createElement("img");
-        this.listItemImgElement4.classList = ("episodes__img")
-
-        this.dateH3Element4 = document.createElement("h3");
-        this.dateH3Element4.classList = ("episodes__date");
-
-        this.titleH3Element4 = document.createElement("h3");
-        this.titleH3Element4.classList = ("episodes__title");
-
+        console.log("mike stinkt");
+        }
 
         this.render();
     }
-
-    // makeCardsFromData(data) {
-    //     Object.entries(data).forEach((entry) => {
-
-    //         this.accountListItemElement = document.createElement("li");
-    //         this.accountListItemElement.classList.add("banky__account");
-    //         this.accountListItemElement.onclick = () => {
-    //             this.bankyMain.callFromRightSection(entry[0], data);
-    //         }
-
-    //         this.accountSwitchButton = document.createElement("button");
-    //         this.accountSwitchButton.classList.add("banky__switchAccount");
-
-    //         this.accountButtonFigure = document.createElement("figure");
-    //         this.accountButtonFigure.classList.add("banky__logo")
-
-    //         this.accountIconElement = document.createElement("i");
-    //         console.log(entry[1][0])
-    //         this.accountIconElement.classList.add("fa-solid", entry[1][0]["logo"]);
-
-    //         this.accountH4Element = document.createElement("h4");
-    //         this.accountH4Element.classList.add("banky__nameOfAccount");
-
-    //         this.accountH4Element.innerHTML = entry[0];
-    //         this.accountListElement.appendChild(this.accountListItemElement);
-
-    //         this.render();
-
-    //     })
-    // }
 
     render() {
         this.placeToRenderLeftSection.appendChild(this.leftSectionElement);
 
         this.leftSectionElement.appendChild(this.listElement);
 
-        // 1
-        this.listElement.appendChild(this.listItemElement1);
-
-        this.listItemElement1.appendChild(this.listItemImgElement1);
-        this.listItemElement1.appendChild(this.dateH3Element1);
-        this.listItemElement1.appendChild(this.titleH3Element1);
-
-        // 2
-        this.listElement.appendChild(this.listItemElement2);
-
-        this.listItemElement2.appendChild(this.listItemImgElement2);
-        this.listItemElement2.appendChild(this.dateH3Element2);
-        this.listItemElement2.appendChild(this.titleH3Element2);
-
-        // 3
-        this.listElement.appendChild(this.listItemElement3);
-
-        this.listItemElement3.appendChild(this.listItemImgElement3);
-        this.listItemElement3.appendChild(this.dateH3Element3);
-        this.listItemElement3.appendChild(this.titleH3Element3);
-
-        // 4
-        this.listElement.appendChild(this.listItemElement4);
-
-        this.listItemElement4.appendChild(this.listItemImgElement4);
-        this.listItemElement4.appendChild(this.dateH3Element4);
-        this.listItemElement4.appendChild(this.titleH3Element4);
-
-
         this.renderContent();
     }
 
     renderContent() {
-
-        // date
-        this.dateH3Element1.innerHTML = "datum";
-        this.dateH3Element2.innerHTML = "datum";
-        this.dateH3Element3.innerHTML = "datum";
-        this.dateH3Element4.innerHTML = "datum";
-
-        // title
-        this.titleH3Element1.innerHTML = "title";
-        this.titleH3Element2.innerHTML = "title";
-        this.titleH3Element3.innerHTML = "title";
-        this.titleH3Element4.innerHTML = "title";
-
-        //img
-        this.listItemImgElement1.src = "./images/logo.png";    
-        this.listItemImgElement2.src = "./images/logo.png";        
-        this.listItemImgElement3.src = "./images/logo.png";
-        this.listItemImgElement4.src = "./images/logo.png";
 
     }
 
@@ -381,7 +280,7 @@ class RightSection {
 
         //text
         this.descriptiontextElement.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut minima. Perferendis! Lorem ipsum dolor sit amet consectetur adipisicing elit.Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut  minima. Perferendis!         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut minima. Perferendis!";
-            
+
         //button
         this.buttonElement.innerHTML = "Audio object";
         this.linkElement.innerHTML = "source >";
@@ -440,12 +339,13 @@ class App {
         this.header = new Header("body");
         this.main = new Main("body");
         this.leftSection = new LeftSection(this.main.midSectionElement);
-        this.rightSection = new RightSection(this.main.midSectionElement);
         this.footer = new Footer(this.main.mainElement);
 
         this.api.GetData().then(
             () => {
                 console.log(this.api.data);
+                this.leftSection.makeCardsFromData(this.api.data);
+                this.rightSection = new RightSection(this.main.midSectionElement);
             }
         );
     }

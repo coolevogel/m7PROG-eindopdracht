@@ -15,7 +15,7 @@
     }
 
     .episodes {
-        gap: 5rem;
+        margin-bottom: 2rem;
 
         &__grouper {
             height: 50%;
@@ -44,7 +44,6 @@
     .episodes {
         display: flex;
         flex-direction: column;
-        margin-bottom: 2rem;
         gap: 3rem;
 
         &__episode {
