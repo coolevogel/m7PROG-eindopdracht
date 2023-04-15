@@ -18,11 +18,10 @@
         max-height: 20rem;
         width: 100%;
         max-width: 60rem;
-        background-image: url("../../../images/logo.png");
-        background-size: cover;
-        background-position: center;
         position: relative;
         box-shadow: 0rem 0rem 1rem 0.1rem rgb(163, 163, 163);
+        overflow: hidden;
+        border-radius: 2rem;
 
         // ::before{
         //     content: "";

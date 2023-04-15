@@ -64,49 +64,26 @@ body {
 .section__left {
   width: 50%;
   height: 100%;
+  padding: 5%;
+  padding-left: 12%;
+  padding-right: 12%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .episodes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: auto;
+  aspect-ratio: 1/1;
+  display: grid;
+  grid-template-columns: 17rem 17rem;
+  grid-template-rows: 17rem 17rem;
   list-style: none;
-  height: 100%;
-  width: 100%;
-  gap: 5rem;
+  grid-gap: calc(100% - 30rem);
   z-index: 1;
 }
-.episodes__grouper {
-  min-height: 10rem;
-  height: 35%;
-  width: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5rem;
-}
-.episodes__grouper ::before {
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgb(199, 199, 199);
-  opacity: 0.1;
-}
 .episodes__episode {
-  margin: 0;
-  height: 100%;
-  min-width: 15rem;
-  flex-wrap: wrap;
-  aspect-ratio: 1/1;
   position: relative;
-  background-color: red;
   box-shadow: 0rem 0rem 1rem 0.3rem rgb(130, 130, 130);
   transition-duration: 0.2s;
 }
@@ -147,11 +124,10 @@ body {
   max-height: 20rem;
   width: 100%;
   max-width: 60rem;
-  background-image: url("../../../images/logo.png");
-  background-size: cover;
-  background-position: center;
   position: relative;
   box-shadow: 0rem 0rem 1rem 0.1rem rgb(163, 163, 163);
+  overflow: hidden;
+  border-radius: 2rem;
 }
 .description__img {
   height: 100%;
@@ -243,29 +219,27 @@ body {
   .episodes {
     flex-direction: column;
   }
-  .section__right {
-    align-items: flex-start;
-  }
 }
 @media screen and (max-width: 500px) {
   .main {
     height: auto;
     padding: 0;
   }
-  .footer {
-    display: none;
+  .midSection {
+    border-radius: 2rem;
+    padding-bottom: 2rem;
   }
   .episodes {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 2rem;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-  .episodes__grouper {
-    flex-wrap: wrap;
-    gap: 2rem;
+    gap: 3rem;
   }
   .episodes__episode {
     min-height: 10rem;
+  }
+  .footer {
+    display: none;
   }
 }
 

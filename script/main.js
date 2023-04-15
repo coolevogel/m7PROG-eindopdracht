@@ -138,12 +138,6 @@ class LeftSection {
         this.listElement = document.createElement("ul");
         this.listElement.classList = ("episodes");
 
-        this.grouperElement1 = document.createElement("div");
-        this.grouperElement1.classList = ("episodes__grouper");
-
-        this.grouperElement2 = document.createElement("div");
-        this.grouperElement2.classList = ("episodes__grouper");
-
         // 1
         this.listItemElement1 = document.createElement("li");
         this.listItemElement1.classList = ("episodes__episode");
@@ -200,37 +194,64 @@ class LeftSection {
         this.render();
     }
 
+    // makeCardsFromData(data) {
+    //     Object.entries(data).forEach((entry) => {
+
+    //         this.accountListItemElement = document.createElement("li");
+    //         this.accountListItemElement.classList.add("banky__account");
+    //         this.accountListItemElement.onclick = () => {
+    //             this.bankyMain.callFromRightSection(entry[0], data);
+    //         }
+
+    //         this.accountSwitchButton = document.createElement("button");
+    //         this.accountSwitchButton.classList.add("banky__switchAccount");
+
+    //         this.accountButtonFigure = document.createElement("figure");
+    //         this.accountButtonFigure.classList.add("banky__logo")
+
+    //         this.accountIconElement = document.createElement("i");
+    //         console.log(entry[1][0])
+    //         this.accountIconElement.classList.add("fa-solid", entry[1][0]["logo"]);
+
+    //         this.accountH4Element = document.createElement("h4");
+    //         this.accountH4Element.classList.add("banky__nameOfAccount");
+
+    //         this.accountH4Element.innerHTML = entry[0];
+    //         this.accountListElement.appendChild(this.accountListItemElement);
+
+    //         this.render();
+
+    //     })
+    // }
+
     render() {
         this.placeToRenderLeftSection.appendChild(this.leftSectionElement);
 
         this.leftSectionElement.appendChild(this.listElement);
 
-        this.listElement.appendChild(this.grouperElement1);
-        this.listElement.appendChild(this.grouperElement2);
-
         // 1
-        this.grouperElement1.appendChild(this.listItemElement1);
+        this.listElement.appendChild(this.listItemElement1);
 
         this.listItemElement1.appendChild(this.listItemImgElement1);
         this.listItemElement1.appendChild(this.dateH3Element1);
         this.listItemElement1.appendChild(this.titleH3Element1);
 
         // 2
-        this.grouperElement1.appendChild(this.listItemElement2);
+        this.listElement.appendChild(this.listItemElement2);
 
         this.listItemElement2.appendChild(this.listItemImgElement2);
         this.listItemElement2.appendChild(this.dateH3Element2);
         this.listItemElement2.appendChild(this.titleH3Element2);
 
         // 3
-        this.grouperElement2.appendChild(this.listItemElement3);
+        this.listElement.appendChild(this.listItemElement3);
 
         this.listItemElement3.appendChild(this.listItemImgElement3);
         this.listItemElement3.appendChild(this.dateH3Element3);
         this.listItemElement3.appendChild(this.titleH3Element3);
 
         // 4
-        this.grouperElement2.appendChild(this.listItemElement4);
+        this.listElement.appendChild(this.listItemElement4);
 
         this.listItemElement4.appendChild(this.listItemImgElement4);
         this.listItemElement4.appendChild(this.dateH3Element4);
@@ -332,7 +353,6 @@ class RightSection {
         this.linkElement = document.createElement("a");
         this.linkElement.classList = ("description__link");
 
-
         this.render();
     }
 
@@ -363,7 +383,7 @@ class RightSection {
         this.descriptiontextElement.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut minima. Perferendis! Lorem ipsum dolor sit amet consectetur adipisicing elit.Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut  minima. Perferendis!         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut minima. Perferendis!";
             
         //button
-        this.buttonElement.innerHTML = "Audioobject";
+        this.buttonElement.innerHTML = "Audio object";
         this.linkElement.innerHTML = "source >";
 
     }

@@ -28,9 +28,6 @@
     .episodes{
         flex-direction: column;
     }
-    .section__right{
-        align-items: flex-start;
-    }
 }
 
 @media screen and (max-width: 500px) {
@@ -39,22 +36,23 @@
         padding: 0;
     }
 
-    .footer {
-        display: none;
+    .midSection{
+        border-radius: 2rem;
+        padding-bottom: 2rem;
     }
 
     .episodes {
+        display: flex;
+        flex-direction: column;
         margin-bottom: 2rem;
-        flex-wrap: wrap;
-        gap: 2rem;
-
-        &__grouper {
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
+        gap: 3rem;
 
         &__episode {
             min-height: 10rem;
         }
+    }
+
+    .footer {
+        display: none;
     }
 }
