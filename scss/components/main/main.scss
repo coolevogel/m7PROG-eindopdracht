@@ -1,7 +1,7 @@
 @use "../../abstracts/vars";
 
 .main {
-    height: 100%;
+    height: calc(100vh - map-get(vars.$vhCalc, "heightOfHeader") - map-get(vars.$vhCalc, "paddingOfBody"));
     width: 100%;
     max-width: 170rem;
     display: flex;
@@ -14,7 +14,7 @@
     border-top-right-radius: 2rem;
     border-top-left-radius: 2rem;
     background-color: white;
-    height: calc(100% - 15rem);
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;

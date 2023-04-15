@@ -25,6 +25,8 @@ class Header {
     placeToRenderHeader;
     headerElement;
     headerFigureElement;
+    headerImgElement;
+    headerH1Element;
 
     constructor(placeToRenderHeader) {
         this.placeToRenderHeader = document.getElementsByTagName(placeToRenderHeader)[0];
@@ -60,6 +62,7 @@ class Header {
 
     renderContent() {
         this.headerH1Element.innerHTML = "Episodes";
+        this.headerImgElement.src = "./images/logo.png"
     }
 }
 
@@ -145,6 +148,9 @@ class LeftSection {
         this.listItemElement1 = document.createElement("li");
         this.listItemElement1.classList = ("episodes__episode");
 
+        this.listItemImgElement1 = document.createElement("img");
+        this.listItemImgElement1.classList = ("episodes__img")
+
         this.dateH3Element1 = document.createElement("h3");
         this.dateH3Element1.classList = ("episodes__date");
 
@@ -154,6 +160,9 @@ class LeftSection {
         // 2
         this.listItemElement2 = document.createElement("li");
         this.listItemElement2.classList = ("episodes__episode");
+
+        this.listItemImgElement2 = document.createElement("img");
+        this.listItemImgElement2.classList = ("episodes__img")
 
         this.dateH3Element2 = document.createElement("h3");
         this.dateH3Element2.classList = ("episodes__date");
@@ -165,6 +174,9 @@ class LeftSection {
         this.listItemElement3 = document.createElement("li");
         this.listItemElement3.classList = ("episodes__episode");
 
+        this.listItemImgElement3 = document.createElement("img");
+        this.listItemImgElement3.classList = ("episodes__img")
+
         this.dateH3Element3 = document.createElement("h3");
         this.dateH3Element3.classList = ("episodes__date");
 
@@ -174,6 +186,9 @@ class LeftSection {
         // 4
         this.listItemElement4 = document.createElement("li");
         this.listItemElement4.classList = ("episodes__episode");
+
+        this.listItemImgElement4 = document.createElement("img");
+        this.listItemImgElement4.classList = ("episodes__img")
 
         this.dateH3Element4 = document.createElement("h3");
         this.dateH3Element4.classList = ("episodes__date");
@@ -196,24 +211,28 @@ class LeftSection {
         // 1
         this.grouperElement1.appendChild(this.listItemElement1);
 
+        this.listItemElement1.appendChild(this.listItemImgElement1);
         this.listItemElement1.appendChild(this.dateH3Element1);
         this.listItemElement1.appendChild(this.titleH3Element1);
 
         // 2
         this.grouperElement1.appendChild(this.listItemElement2);
 
+        this.listItemElement2.appendChild(this.listItemImgElement2);
         this.listItemElement2.appendChild(this.dateH3Element2);
         this.listItemElement2.appendChild(this.titleH3Element2);
 
         // 3
         this.grouperElement2.appendChild(this.listItemElement3);
 
+        this.listItemElement3.appendChild(this.listItemImgElement3);
         this.listItemElement3.appendChild(this.dateH3Element3);
         this.listItemElement3.appendChild(this.titleH3Element3);
 
         // 4
         this.grouperElement2.appendChild(this.listItemElement4);
 
+        this.listItemElement4.appendChild(this.listItemImgElement4);
         this.listItemElement4.appendChild(this.dateH3Element4);
         this.listItemElement4.appendChild(this.titleH3Element4);
 
@@ -234,6 +253,12 @@ class LeftSection {
         this.titleH3Element2.innerHTML = "title";
         this.titleH3Element3.innerHTML = "title";
         this.titleH3Element4.innerHTML = "title";
+
+        //img
+        this.listItemImgElement1.src = "./images/logo.png";    
+        this.listItemImgElement2.src = "./images/logo.png";        
+        this.listItemImgElement3.src = "./images/logo.png";
+        this.listItemImgElement4.src = "./images/logo.png";
 
     }
 
@@ -286,6 +311,9 @@ class RightSection {
         this.descriptionHeaderElement = document.createElement("div");
         this.descriptionHeaderElement.classList = ("description__header");
 
+        this.descriptionImgElement = document.createElement("img");
+        this.descriptionImgElement.classList = ("description__img");
+
         this.descriptionDateElement = document.createElement("h3");
         this.descriptionDateElement.classList = ("description__date");
 
@@ -305,8 +333,6 @@ class RightSection {
         this.linkElement.classList = ("description__link");
 
 
-
-
         this.render();
     }
 
@@ -317,6 +343,7 @@ class RightSection {
         this.rightSectionELement.appendChild(this.descriptiontextElement);
         this.rightSectionELement.appendChild(this.buttonWrapperElement);
 
+        this.descriptionHeaderElement.appendChild(this.descriptionImgElement);
         this.descriptionHeaderElement.appendChild(this.descriptionDateElement);
         this.descriptionHeaderElement.appendChild(this.descriptionTitleElement);
 
@@ -328,6 +355,7 @@ class RightSection {
 
     renderContent() {
         //header
+        this.descriptionImgElement.src = "./images/logo.png";
         this.descriptionDateElement.innerHTML = "datum";
         this.descriptionTitleElement.innerHTML = "title";
 
