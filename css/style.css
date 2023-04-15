@@ -92,6 +92,17 @@ body {
   cursor: pointer;
   transform: scale(1.1);
 }
+.episodes__episode::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.6;
+  z-index: 1;
+}
 .episodes__img {
   height: 100%;
   width: 100%;
@@ -102,6 +113,8 @@ body {
   right: 0.5rem;
   background: none;
   font-size: 80%;
+  color: #eee;
+  z-index: 2;
 }
 .episodes__title {
   position: absolute;
@@ -109,6 +122,8 @@ body {
   left: 0.5rem;
   background: none;
   font-size: 80%;
+  color: #eee;
+  z-index: 2;
 }
 
 .section__right {
@@ -132,6 +147,17 @@ body {
   overflow: hidden;
   border-radius: 2rem;
 }
+.description__header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.6;
+  z-index: 1;
+}
 .description__img {
   height: 100%;
   width: 100%;
@@ -141,11 +167,15 @@ body {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  color: #eee;
+  z-index: 2;
 }
 .description__title {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
+  color: #eee;
+  z-index: 2;
 }
 .description__text {
   padding-right: 4rem;

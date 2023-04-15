@@ -62,7 +62,7 @@ class Header {
 
     renderContent() {
         this.headerH1Element.innerHTML = "Episodes";
-        this.headerImgElement.src = "./images/logo.png"
+        this.headerImgElement.src = "./images/squidward.png"
     }
 }
 
@@ -169,11 +169,16 @@ class LeftSection {
             this.listItemElement.appendChild(this.titleH3Element);
 
             this.listItemElement.onclick = () => {
-
-                console.log("episode" + [i])
+                this.rightSection.descriptionTitleElement.innerHTML = data[i]["title"];
+                this.rightSection.descriptionDateElement.innerHTML = data[i]["date (dd-mm-yyyy)"];
+                this.rightSection.descriptionImgElement.src = data[i]["image"];
+                this.rightSection.descriptiontextElement.innerHTML = data[i]["summary"];
+                this.rightSection.linkElement.href = data[i]["url"];
+                this.rightSection.buttonHref = data[i]["audio"];
             };
-
         }
+        
+        this.rightSection.buttonHref = data[0]["audio"];
 
         this.render();
     }
@@ -220,9 +225,11 @@ class RightSection {
     descriptionDateElement;
     descriptionTitleElement;
     descriptiontextElement;
+    descriptionImgElement;
     buttonWrapperElement;
     buttonElement;
     linkElement;
+    buttonHref;
 
     constructor(placeToRenderRightSection) {
         this.placeToRenderRightSection = placeToRenderRightSection;
@@ -251,6 +258,10 @@ class RightSection {
         this.buttonElement = document.createElement("button");
         this.buttonElement.classList = ("description__button");
 
+        this.buttonElement.addEventListener("click", function () {
+            window.location.href = this.buttonHref;
+        });
+
         this.linkElement = document.createElement("a");
         this.linkElement.classList = ("description__link");
 
@@ -270,22 +281,26 @@ class RightSection {
 
         this.buttonWrapperElement.appendChild(this.buttonElement);
         this.buttonWrapperElement.appendChild(this.linkElement);
-
-        this.renderContent();
     }
 
-    renderContent() {
+    renderContent(data) {
+        console.log(data);
         //header
-        this.descriptionImgElement.src = "./images/logo.png";
-        this.descriptionDateElement.innerHTML = "datum";
-        this.descriptionTitleElement.innerHTML = "title";
+        this.descriptionImgElement.src = data[0]["image"];
+        this.descriptionDateElement.innerHTML = data[0]["date (dd-mm-yyyy)"];
+        this.descriptionTitleElement.innerHTML = data[0]["title"];
 
         //text
-        this.descriptiontextElement.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut minima. Perferendis! Lorem ipsum dolor sit amet consectetur adipisicing elit.Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut  minima. Perferendis!         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut minima. Perferendis!";
+        this.descriptiontextElement.innerHTML = data[0]["summary"];
 
         //button
-        this.buttonElement.innerHTML = "Audio object";
+        this.buttonElement.innerHTML = "Audio download";
+        this.buttonElement
+
+        //link
         this.linkElement.innerHTML = "source >";
+        this.linkElement.href = data[0]["url"];
+
 
     }
 
@@ -347,6 +362,7 @@ class App {
         this.api.GetData().then(
             () => {
                 this.leftSection.makeCardsFromData(this.api.data);
+                this.rightSection.renderContent(this.api.data);
             }
         );
     }
