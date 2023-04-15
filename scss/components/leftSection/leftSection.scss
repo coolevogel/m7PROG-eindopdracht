@@ -25,6 +25,17 @@
         align-items: center;
         justify-content: center;
         gap: 5rem;
+
+        ::before{
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgb(199, 199, 199);
+            opacity: 0.1;
+        }
     }
 
     &__episode {
@@ -37,7 +48,7 @@
         background-image: url(../../../images/logo.png);
         background-position: center;
         background-size: cover;
-        box-shadow: 0rem 0rem 1rem 0.3rem rgb(210, 210, 210);
+        box-shadow: 0rem 0rem 1rem 0.3rem rgb(130, 130, 130);
         transition-duration: 0.2s;
 
         &:hover{
@@ -50,11 +61,13 @@
         position: absolute;
         top: 0.5rem;
         right: 0.5rem;
+        background: none;
     }
 
     &__title {
         position: absolute;
         bottom: 0.5rem;
         left: 0.5rem;
+        background: none;
     }
 }

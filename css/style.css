@@ -89,6 +89,16 @@ body {
   justify-content: center;
   gap: 5rem;
 }
+.episodes__grouper ::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(199, 199, 199);
+  opacity: 0.1;
+}
 .episodes__episode {
   margin: 0;
   height: 100%;
@@ -99,7 +109,7 @@ body {
   background-image: url(../../../images/logo.png);
   background-position: center;
   background-size: cover;
-  box-shadow: 0rem 0rem 1rem 0.3rem rgb(210, 210, 210);
+  box-shadow: 0rem 0rem 1rem 0.3rem rgb(130, 130, 130);
   transition-duration: 0.2s;
 }
 .episodes__episode:hover {
@@ -110,11 +120,13 @@ body {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+  background: none;
 }
 .episodes__title {
   position: absolute;
   bottom: 0.5rem;
   left: 0.5rem;
+  background: none;
 }
 
 .section__right {
@@ -138,6 +150,16 @@ body {
   background-position: center;
   position: relative;
   box-shadow: 0rem 0rem 1rem 0.1rem rgb(163, 163, 163);
+}
+.description__header ::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 0, 0);
+  opacity: 0.1;
 }
 .description__date {
   position: absolute;
@@ -225,8 +247,7 @@ body {
     flex-direction: column;
   }
   .section__right {
-    justify-content: flex-start;
-    background-color: red;
+    align-items: flex-start;
   }
 }
 @media screen and (max-width: 500px) {

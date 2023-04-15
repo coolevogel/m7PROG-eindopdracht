@@ -126,7 +126,7 @@ class LeftSection {
     grouperElement1;
     grouperElement2;
 
-    constructor(placeToRenderLeftSection){
+    constructor(placeToRenderLeftSection) {
         this.placeToRenderLeftSection = placeToRenderLeftSection;
 
         this.leftSectionElement = document.createElement("section");
@@ -185,11 +185,11 @@ class LeftSection {
         this.render();
     }
 
-    render(){
+    render() {
         this.placeToRenderLeftSection.appendChild(this.leftSectionElement);
 
         this.leftSectionElement.appendChild(this.listElement);
-        
+
         this.listElement.appendChild(this.grouperElement1);
         this.listElement.appendChild(this.grouperElement2);
 
@@ -217,11 +217,11 @@ class LeftSection {
         this.listItemElement4.appendChild(this.dateH3Element4);
         this.listItemElement4.appendChild(this.titleH3Element4);
 
-        
+
         this.renderContent();
     }
 
-    renderContent(){
+    renderContent() {
 
         // date
         this.dateH3Element1.innerHTML = "datum";
@@ -259,18 +259,6 @@ class RightSection {
     //         necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut
     //         minima.
     //         Perferendis!
-    //         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum enim nemo, neque beatae a unde,
-    //         necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut
-    //         minima.
-    //         Perferendis!
-    //         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum enim nemo, neque beatae a unde,
-    //         necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut
-    //         minima.
-    //         Perferendis!
-    //         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum enim nemo, neque beatae a unde,
-    //         necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut
-    //         minima.
-    //         Perferendis!
     //     </p>
     //     <div class="description__buttonWrapper">
     //         <button class="description__button">Audio object</button>
@@ -279,6 +267,78 @@ class RightSection {
 
     // </section>
 
+    placeToRenderRightSection;
+    rightSectionELement;
+    descriptionHeaderElement;
+    descriptionDateElement;
+    descriptionTitleElement;
+    descriptiontextElement;
+    buttonWrapperElement;
+    buttonElement;
+    linkElement;
+
+    constructor(placeToRenderRightSection) {
+        this.placeToRenderRightSection = placeToRenderRightSection;
+
+        this.rightSectionELement = document.createElement("section");
+        this.rightSectionELement.classList = ("section__right");
+
+        this.descriptionHeaderElement = document.createElement("div");
+        this.descriptionHeaderElement.classList = ("description__header");
+
+        this.descriptionDateElement = document.createElement("h3");
+        this.descriptionDateElement.classList = ("description__date");
+
+        this.descriptionTitleElement = document.createElement("h3");
+        this.descriptionTitleElement.classList = ("description__title");
+
+        this.descriptiontextElement = document.createElement("p");
+        this.descriptiontextElement.classList = ("description__text");
+
+        this.buttonWrapperElement = document.createElement("div");
+        this.buttonWrapperElement.classList = ("description__buttonWrapper");
+
+        this.buttonElement = document.createElement("button");
+        this.buttonElement.classList = ("description__button");
+
+        this.linkElement = document.createElement("a");
+        this.linkElement.classList = ("description__link");
+
+
+
+
+        this.render();
+    }
+
+    render() {
+        this.placeToRenderRightSection.appendChild(this.rightSectionELement);
+
+        this.rightSectionELement.appendChild(this.descriptionHeaderElement);
+        this.rightSectionELement.appendChild(this.descriptiontextElement);
+        this.rightSectionELement.appendChild(this.buttonWrapperElement);
+
+        this.descriptionHeaderElement.appendChild(this.descriptionDateElement);
+        this.descriptionHeaderElement.appendChild(this.descriptionTitleElement);
+
+        this.buttonWrapperElement.appendChild(this.buttonElement);
+        this.buttonWrapperElement.appendChild(this.linkElement);
+
+        this.renderContent();
+    }
+
+    renderContent() {
+        //header
+        this.descriptionDateElement.innerHTML = "datum";
+        this.descriptionTitleElement.innerHTML = "title";
+
+        //text
+        this.descriptiontextElement.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut minima. Perferendis! Lorem ipsum dolor sit amet consectetur adipisicing elit.Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut  minima. Perferendis!         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum enim nemo, neque beatae a unde, necessitatibus laboriosam culpa atque itaque facilis, doloribus libero suscipit qui repellat aut minima. Perferendis!";
+            
+        //button
+        this.buttonElement.innerHTML = "Audioobject";
+        this.linkElement.innerHTML = "source >";
+
+    }
 
 }
 
@@ -292,7 +352,7 @@ class Footer {
     footerElement;
     footerParagraphElement;
 
-    constructor(placeToRenderFooter){
+    constructor(placeToRenderFooter) {
         this.placeToRenderFooter = placeToRenderFooter;
 
         this.footerElement = document.createElement("footer");
@@ -304,13 +364,13 @@ class Footer {
         this.render();
     }
 
-    render(){
+    render() {
         this.placeToRenderFooter.appendChild(this.footerElement);
         this.footerElement.appendChild(this.footerParagraphElement);
         this.renderContent();
     }
 
-    renderContent(){
+    renderContent() {
         this.footerParagraphElement.innerHTML = "gemaakt door - Matthijs Jurriaans SD2C Media College Amsterdam";
     }
 
