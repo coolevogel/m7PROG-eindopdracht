@@ -128,8 +128,10 @@ class LeftSection {
     listElement;
     grouperElement1;
     grouperElement2;
+    rightSection
 
-    constructor(placeToRenderLeftSection) {
+    constructor(placeToRenderLeftSection, rightSection) {
+        this.rightSection = rightSection;
         this.placeToRenderLeftSection = placeToRenderLeftSection;
 
         this.leftSectionElement = document.createElement("section");
@@ -137,34 +139,40 @@ class LeftSection {
 
         this.listElement = document.createElement("ul");
         this.listElement.classList = ("episodes");
+
+        console.log(this.rightSection);
     }
 
     makeCardsFromData(data) {
         // Object.entries(data).forEach((entry) => {
-        for(let i = 0; i < 4; i++){
+        for (let i = 0; i < 4; i++) {
 
-        this.listItemElement = document.createElement("li");
-        this.listItemElement.classList = ("episodes__episode");
+            this.listItemElement = document.createElement("li");
+            this.listItemElement.classList = ("episodes__episode");
 
-        this.listItemImgElement = document.createElement("img");
-        this.listItemImgElement.classList = ("episodes__img");
+            this.listItemImgElement = document.createElement("img");
+            this.listItemImgElement.classList = ("episodes__img");
 
-        this.dateH3Element = document.createElement("h3");
-        this.dateH3Element.classList = ("episodes__date");
+            this.dateH3Element = document.createElement("h3");
+            this.dateH3Element.classList = ("episodes__date");
 
-        this.titleH3Element = document.createElement("h3");
-        this.titleH3Element.classList = ("episodes__title");
+            this.titleH3Element = document.createElement("h3");
+            this.titleH3Element.classList = ("episodes__title");
 
-        this.dateH3Element.innerHTML = "datum";
-        this.titleH3Element.innerHTML = "title";
-        this.listItemImgElement.src = "./images/logo.png";
+            this.dateH3Element.innerHTML = data[i]["date (dd-mm-yyyy)"];
+            this.titleH3Element.innerHTML = data[i]["title"];
+            this.listItemImgElement.src = data[i]["image"];
 
-        this.listElement.appendChild(this.listItemElement);
-        this.listItemElement.appendChild(this.listItemImgElement);
-        this.listItemElement.appendChild(this.dateH3Element);
-        this.listItemElement.appendChild(this.titleH3Element);
+            this.listElement.appendChild(this.listItemElement);
+            this.listItemElement.appendChild(this.listItemImgElement);
+            this.listItemElement.appendChild(this.dateH3Element);
+            this.listItemElement.appendChild(this.titleH3Element);
 
-        console.log("mike stinkt");
+            this.listItemElement.onclick = () => {
+
+                console.log("episode" + [i])
+            };
+
         }
 
         this.render();
@@ -174,12 +182,6 @@ class LeftSection {
         this.placeToRenderLeftSection.appendChild(this.leftSectionElement);
 
         this.leftSectionElement.appendChild(this.listElement);
-
-        this.renderContent();
-    }
-
-    renderContent() {
-
     }
 
 }
@@ -338,14 +340,13 @@ class App {
         this.api = new Api();
         this.header = new Header("body");
         this.main = new Main("body");
-        this.leftSection = new LeftSection(this.main.midSectionElement);
+        this.rightSection = new RightSection(this.main.midSectionElement);
+        this.leftSection = new LeftSection(this.main.midSectionElement, this.rightSection);
         this.footer = new Footer(this.main.mainElement);
 
         this.api.GetData().then(
             () => {
-                console.log(this.api.data);
                 this.leftSection.makeCardsFromData(this.api.data);
-                this.rightSection = new RightSection(this.main.midSectionElement);
             }
         );
     }
