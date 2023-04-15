@@ -61,7 +61,7 @@ class Header {
     }
 
     renderContent() {
-        this.headerH1Element.innerHTML = "Episodes";
+        this.headerH1Element.innerHTML = "Collection of Happiness";
         this.headerImgElement.src = "./images/squidward.png"
     }
 }

@@ -15,7 +15,7 @@ body {
 body {
   background: rgb(76, 130, 135);
   padding: 3rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -113,7 +113,7 @@ body {
   right: 0.5rem;
   background: none;
   font-size: 80%;
-  color: #eee;
+  color: #ffffff;
   z-index: 2;
 }
 .episodes__title {
@@ -122,7 +122,7 @@ body {
   left: 0.5rem;
   background: none;
   font-size: 80%;
-  color: #eee;
+  color: #ffffff;
   z-index: 2;
 }
 
@@ -168,14 +168,14 @@ body {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  color: #eee;
+  color: #ffffff;
   z-index: 2;
 }
 .description__title {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  color: #eee;
+  color: #ffffff;
   z-index: 2;
 }
 .description__text {
