@@ -62,7 +62,7 @@ class Header {
 
     renderContent() {
         this.headerH1Element.innerHTML = "Collection of Happiness";
-        this.headerImgElement.src = "./images/squidward.png"
+        this.headerImgElement.src = "./images/squidward.webp"
     }
 }
 
@@ -139,8 +139,6 @@ class LeftSection {
 
         this.listElement = document.createElement("ul");
         this.listElement.classList = ("episodes");
-
-        console.log(this.rightSection);
     }
 
     makeCardsFromData(data) {
@@ -174,11 +172,10 @@ class LeftSection {
                 this.rightSection.descriptionImgElement.src = data[i]["image"];
                 this.rightSection.descriptiontextElement.innerHTML = data[i]["summary"];
                 this.rightSection.linkElement.href = data[i]["url"];
-                this.rightSection.buttonHref = data[i]["audio"];
+                this.rightSection.audio = data[i]["audio"];
+                console.log(this.rightSection.audio)
             };
         }
-        
-        this.rightSection.buttonHref = data[0]["audio"];
 
         this.render();
     }
@@ -229,7 +226,7 @@ class RightSection {
     buttonWrapperElement;
     buttonElement;
     linkElement;
-    buttonHref;
+    audio;
 
     constructor(placeToRenderRightSection) {
         this.placeToRenderRightSection = placeToRenderRightSection;
@@ -259,13 +256,21 @@ class RightSection {
         this.buttonElement.classList = ("description__button");
 
         this.buttonElement.addEventListener("click", function () {
-            window.location.href = this.buttonHref;
+            this.playAudio(this.audio ,false)
         });
 
         this.linkElement = document.createElement("a");
         this.linkElement.classList = ("description__link");
+        
 
         this.render();
+    }
+
+    playAudio(audioName,loop){
+        this.audio = new Audio(audioName);
+        this.audio.loop = loop;
+        this.audio.play();
+
     }
 
     render() {
@@ -284,7 +289,6 @@ class RightSection {
     }
 
     renderContent(data) {
-        console.log(data);
         //header
         this.descriptionImgElement.src = data[0]["image"];
         this.descriptionDateElement.innerHTML = data[0]["date (dd-mm-yyyy)"];
@@ -294,14 +298,15 @@ class RightSection {
         this.descriptiontextElement.innerHTML = data[0]["summary"];
 
         //button
-        this.buttonElement.innerHTML = "Audio download";
+        this.buttonElement.innerHTML = "play";
         this.buttonElement
+        this.audio = new Audio(data[0]["audio"]);
+
 
         //link
         this.linkElement.innerHTML = "source >";
         this.linkElement.href = data[0]["url"];
-
-
+        console.log(this.audio);
     }
 
 }
