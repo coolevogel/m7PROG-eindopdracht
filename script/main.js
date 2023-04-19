@@ -172,8 +172,7 @@ class LeftSection {
                 this.rightSection.descriptionImgElement.src = data[i]["image"];
                 this.rightSection.descriptiontextElement.innerHTML = data[i]["summary"];
                 this.rightSection.linkElement.href = data[i]["url"];
-                this.rightSection.audio = data[i]["audio"];
-                console.log(this.rightSection.audio)
+                this.rightSection.audioElement.src = data[i]["audio"];
             };
         }
 
@@ -224,9 +223,8 @@ class RightSection {
     descriptiontextElement;
     descriptionImgElement;
     buttonWrapperElement;
-    buttonElement;
+    audioElement;
     linkElement;
-    audio;
 
     constructor(placeToRenderRightSection) {
         this.placeToRenderRightSection = placeToRenderRightSection;
@@ -252,25 +250,15 @@ class RightSection {
         this.buttonWrapperElement = document.createElement("div");
         this.buttonWrapperElement.classList = ("description__buttonWrapper");
 
-        this.buttonElement = document.createElement("button");
-        this.buttonElement.classList = ("description__button");
-
-        this.buttonElement.addEventListener("click", function () {
-            this.playAudio(this.audio ,false)
-        });
+        this.audioElement = document.createElement("audio");
+        this.audioElement.classList = ("description__audio");
+        this.audioElement.setAttribute("controls", true)
 
         this.linkElement = document.createElement("a");
         this.linkElement.classList = ("description__link");
         
 
         this.render();
-    }
-
-    playAudio(audioName,loop){
-        this.audio = new Audio(audioName);
-        this.audio.loop = loop;
-        this.audio.play();
-
     }
 
     render() {
@@ -284,7 +272,7 @@ class RightSection {
         this.descriptionHeaderElement.appendChild(this.descriptionDateElement);
         this.descriptionHeaderElement.appendChild(this.descriptionTitleElement);
 
-        this.buttonWrapperElement.appendChild(this.buttonElement);
+        this.buttonWrapperElement.appendChild(this.audioElement);
         this.buttonWrapperElement.appendChild(this.linkElement);
     }
 
@@ -297,16 +285,12 @@ class RightSection {
         //text
         this.descriptiontextElement.innerHTML = data[0]["summary"];
 
-        //button
-        this.buttonElement.innerHTML = "play";
-        this.buttonElement
-        this.audio = new Audio(data[0]["audio"]);
-
+        //audio
+        this.audioElement.src = data[0]["audio"];
 
         //link
         this.linkElement.innerHTML = "source >";
         this.linkElement.href = data[0]["url"];
-        console.log(this.audio);
     }
 
 }

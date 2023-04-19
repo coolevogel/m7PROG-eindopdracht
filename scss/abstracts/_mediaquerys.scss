@@ -1,4 +1,12 @@
 @media screen and (max-width: 1500px) {
+
+    .header{
+    }
+
+    .main{
+        height: auto;
+    }
+
     .midSection {
         flex-direction: column;
         height: auto;
@@ -34,6 +42,7 @@
     .main {
         height: auto;
         padding: 0;
+        margin: 0;
     }
 
     .midSection{
