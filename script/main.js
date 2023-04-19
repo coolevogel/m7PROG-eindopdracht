@@ -139,11 +139,13 @@ class LeftSection {
 
         this.listElement = document.createElement("ul");
         this.listElement.classList = ("episodes");
-    }
+    } 
 
     makeCardsFromData(data) {
+        let num1 = Math.floor(Math.random() * 4);
+        let num2 = num1 + 4;
         // Object.entries(data).forEach((entry) => {
-        for (let i = 0; i < 4; i++) {
+        for (let i = num1; i < num2; i++) {
 
             this.listItemElement = document.createElement("li");
             this.listItemElement.classList = ("episodes__episode");
